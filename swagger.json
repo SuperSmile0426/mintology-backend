@@ -1,0 +1,194 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Mintology",
+    "description": "Mintology Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "User",
+      "description": "API for nft in the system"
+    },
+    {
+      "name": "NFT",
+      "description": "API for nft in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "definitions": {
+    "bad_request": {
+      "description": "Bad request model",
+      "properties": {
+        "error": {
+          "description": "Bad request message",
+          "type": "string"
+        }
+      },
+      "required": ["error"],
+      "title": "Bad request",
+      "type": "object",
+      "x-model": "Bad request"
+    },
+    "internal_server_error": {
+      "description": "Internal server error model",
+      "properties": {
+        "error": {
+          "description": "Unkown error",
+          "type": "string"
+        }
+      },
+      "required": ["error"],
+      "title": "Internal server error",
+      "type": "object",
+      "x-model": "Internal server error"
+    },
+    "unauthorized": {
+      "description": "Unauthorized model",
+      "properties": {
+        "error": {
+          "description": "Unauthorized message",
+          "type": "string"
+        }
+      },
+      "required": ["error"],
+      "title": "Unauthorized",
+      "type": "object",
+      "x-model": "Unauthorized"
+    }
+  },
+  "produces": ["application/json"],
+  "parameters": {
+    "sign-up-email": {
+      "name": "email",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    },
+    "sign-up-password": {
+      "name": "password",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    },
+    "sign-in-email": {
+      "name": "email",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    },
+    "sign-in-password": {
+      "name": "password",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    }
+  },
+  "paths": {
+    "/auth/sign-up": {
+      "post": {
+        "tags": ["User"],
+        "summary": "SignUp User",
+        "parameters": [
+          {
+            "$ref": "#/parameters/sign-up-email"
+          },
+          {
+            "$ref": "#/parameters/sign-up-password"
+          }
+        ],
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "message": "User was registerd correctly."
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "examples": {
+              "application/json": {
+                "message": ["Invalid value"]
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/bad_request",
+              "x-scope": ["https://esi.evetech.net/_latest/swagger.json"]
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "examples": {
+              "application/json": {
+                "message": "Internal server error"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/internal_server_error",
+              "x-scope": ["https://esi.evetech.net/_latest/swagger.json"]
+            }
+          }
+        }
+      }
+    },
+    "/auth/sign-in": {
+      "post": {
+        "tags": ["User"],
+        "summary": "SignIn User",
+        "parameters": [
+          {
+            "$ref": "#/parameters/sign-in-email"
+          },
+          {
+            "$ref": "#/parameters/sign-in-password"
+          }
+        ],
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDYyYWIxYzFjZjZhNjBjMDVmOTBjMCIsImlhdCI6MTcwODUzNDcxNywiZXhwIjoxNzA4NTM4MzE3fQ.yc0TUrEpe6E6iAguBtIH6ptQdOa9qg0iIyhiOGl1N74"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "examples": {
+              "application/json": {
+                "message": ["Invalid value"]
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/bad_request",
+              "x-scope": ["https://esi.evetech.net/_latest/swagger.json"]
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "examples": {
+              "application/json": {
+                "message": "Internal server error"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/internal_server_error",
+              "x-scope": ["https://esi.evetech.net/_latest/swagger.json"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

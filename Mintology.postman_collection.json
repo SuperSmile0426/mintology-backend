@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "2590c3fa-3022-460f-8d3e-5265f70184be",
+		"name": "Mintology",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33062912"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"akiranakao@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"akiranakao@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NFT",
+			"item": [
+				{
+					"name": "Update NFT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDRlNGM2ZGIxMzQyNDEwZTIxYTk1ZSIsImlhdCI6MTcwODQ1Njc0OCwiZXhwIjoxNzA4NDYwMzQ4fQ.8AO6R0Y4PXTSVFBCuLIyH93VssHw19lBAbh9kPGWrHU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updatedNFT\",\r\n    \"image\": \"https://artisse.ai/wp-content/uploads/2023/12/ai_imagery_test.png\",\r\n    \"project_id\": \"229ebb20-cf08-11ee-ab9a-591c7bbde302\",\r\n    \"token_id\": \"25309655691819690109164192785093543054837507329617773874557012811883959891586\",\r\n    \"description\": \"description1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/nft/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"nft",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get NFT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDRlNGM2ZGIxMzQyNDEwZTIxYTk1ZSIsImlhdCI6MTcwODQ1MjcyOCwiZXhwIjoxNzA4NDU2MzI4fQ.95halLspZBx3N4i4PE2Gm9iDTUUMEkVyjQEMlLavjlY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_id\": \"229ebb20-cf08-11ee-ab9a-591c7bbde302\",\r\n    \"token_id\": \"25309655691819690109164192785093543054837507329615329639610219446364622325778\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/nft/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"nft",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get NFTs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDRlNGM2ZGIxMzQyNDEwZTIxYTk1ZSIsImlhdCI6MTcwODQ1MjcyOCwiZXhwIjoxNzA4NDU2MzI4fQ.95halLspZBx3N4i4PE2Gm9iDTUUMEkVyjQEMlLavjlY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "project_id",
+								"value": "229ebb20-cf08-11ee-ab9a-591c7bbde302",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/nft?project_id=229ebb20-cf08-11ee-ab9a-591c7bbde302",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"nft"
+							],
+							"query": [
+								{
+									"key": "project_id",
+									"value": "229ebb20-cf08-11ee-ab9a-591c7bbde302"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get NFTImageLink",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDNhN2M4NDFhODNkYmI2ZjVjNmZmYSIsImlhdCI6MTcwODQ0MjYwMywiZXhwIjoxNzA4NDQ2MjAzfQ.WqF7BtjSkJaFwVvL2yfToHbyAf_e_418aMoQOt4wQ20",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/nft/nftlink",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"nft",
+								"nftlink"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
